@@ -18,7 +18,7 @@ var cstmFormatter = {
 var cstmKdf = {
     execute: (password, keySize, ivSize, saltWA, hasher) => {
         if (saltWA === undefined){ // encrypt
-        		saltWA = CryptoJS.lib.WordArray.random(saltSize * 4)
+            saltWA = CryptoJS.lib.WordArray.random(saltSize * 4)
         }
         var keyIvWA = CryptoJS.PBKDF2(password, saltWA, {keySize: keySize + ivSize, iterations: iterations, hasher: hash})
         var keyWA = CryptoJS.lib.WordArray.create(keyIvWA.words.slice(0, keySize), keySize * 4)
