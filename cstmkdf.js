@@ -35,5 +35,5 @@ var cfg = {
 var passphrase = 'some passphrase'
 var ciphertextB64  = CryptoJS.AES.encrypt('The quick brown fox jumps over the lazy dog', passphrase, cfg).toString() // applies cstmFormatter#stringify() and cstmKdf
 var decryptedWA = CryptoJS.AES.decrypt(ciphertextB64, passphrase, cfg) // applies cstmFormatter#parse() and cstmKdf
-console.log("encryptedB64:", ciphertextB64)
-console.log("decrypted:   ", decryptedWA.toString(CryptoJS.enc.Utf8))
+console.log('ciphertextB64:', ciphertextB64)
+console.log('decrypted:    ', decryptedWA.toString(CryptoJS.enc.Utf8))
